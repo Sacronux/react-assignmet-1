@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# React Table App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that fetches data from an API and displays it in a table. The table has sorting and filtering capabilities, and the user can select how many items to display per page. The application is built using TypeScript for type safety.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetches data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users) to get a list of users.
+- The table displays user data with columns: "ID", "Username", "Email" and "Phone".
+- Users can sort the table by clicking on the column headers. Clicking on the same column header twice toggles between ascending and descending order.
+- The table can be filtered by typing into an input field. It searches for substrings in the "Username" and "Email" columns.
+- Users can select how many items to display per page using a dropdown select. Default items per page is 5, with options of 5, 10, and 15.
+- Pagination buttons are provided at the bottom of the table to navigate between pages.
+- The table data is paginated on the client-side based on the user's pagination selection.
+- A loading spinner is displayed while data is being fetched from the API.
+- An error message is shown instead of the table in case the API request fails, and the "Add new user" button is disabled in this case.
+- Users can delete individual items from the table.
+- An "Add new user" button is provided to add a new user to the table. The new user's ID, Username, Email, and Phone are generated automatically.
+- "@material-ui" has been used as a fast and handful tool to build MVP apps.
 
-### `npm start`
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `src`: Contains the main source code files.
+  - `App.tsx`: The main component that renders the table and handles data fetching and pagination logic.
+  - `components`: Contains the reusable React components.
+    - `TableHeader.tsx`: Component for rendering the table header with sorting functionality.
+    - `TableBody.tsx`: Component for rendering the table body with user rows.
+    - `TableRow.tsx`: Component for rendering individual user rows.
+    - `TablePagination.tsx`: Component for rendering pagination buttons and handling page changes.
+    - `Table.module.css`: Contains CSS styles to customize the appearance of the table.
+    - `helpers.ts`: Contains some utility functions to modulize app.
+  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to Run
 
-### `npm test`
+1. Clone the repository and navigate to the project directory.
+2. Install the dependencies using `npm install`.
+3. Start the development server with `npm start`.
+4. The application will open in your default web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Conclusion
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This React application demonstrates how to build a table with pagination, sorting, filtering, and other functionalities using TypeScript and React components. It provides a clean and organized user interface for displaying and managing a list of users fetched from an external API. The app's modular structure makes it easy to maintain and extend in the future.

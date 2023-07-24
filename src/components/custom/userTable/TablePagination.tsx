@@ -24,7 +24,7 @@ const TablePagination: React.FC<TablePaginationProps> = ({
     <div>
       <Select value={itemsPerPage} onChange={handleItemsPerPageChange}>
         {tableSizeOptions.map(option => (
-            <MenuItem value={option}>{option}</MenuItem>
+            <MenuItem key={option} value={option}>{option}</MenuItem>
         ))}
       </Select>
       {Array.from({ length: totalPages }).map((_, index) => (
